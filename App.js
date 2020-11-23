@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 
 import { View, Text } from 'react-native'
 
-import * as firebase from 'firebase';
-import 'firebase/firestore';
+import * as firebase from 'firebase'
 
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
@@ -15,14 +14,14 @@ const store = createStore(rootReducer, applyMiddleware(thunk))
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAGV2HfQSQtFCjD9xbu4RDUiTewa7is8O8",
-  authDomain: "instagram-dev-8b9c4.firebaseapp.com",
-  databaseURL: "https://instagram-dev-8b9c4.firebaseio.com",
-  projectId: "instagram-dev-8b9c4",
-  storageBucket: "instagram-dev-8b9c4.appspot.com",
-  messagingSenderId: "386631361638",
-  appId: "1:386631361638:web:d25aa4b5ec7911c57679a7",
-  measurementId: "G-GQYEJ3XWBV"
+   apiKey: "AIzaSyCnL6lmNfdjg7GRmreCMC7Gon8cnKD6hiY",
+    authDomain: "picsta-5c28c.firebaseapp.com",
+    databaseURL: "https://picsta-5c28c.firebaseio.com",
+    projectId: "picsta-5c28c",
+    storageBucket: "picsta-5c28c.appspot.com",
+    messagingSenderId: "982826221843",
+    appId: "1:982826221843:web:768e3edd94030c2e60dae6",
+    measurementId: "G-VC13TPTX83"
 };
 
 if (firebase.apps.length === 0) {
@@ -45,7 +44,7 @@ const Stack = createStackNavigator();
 
 export class App extends Component {
   constructor(props) {
-    super(props)
+    super()
     this.state = {
       loaded: false,
     }
@@ -93,9 +92,8 @@ export class App extends Component {
         <NavigationContainer >
           <Stack.Navigator initialRouteName="Main">
             <Stack.Screen name="Main" component={MainScreen}  options={{ headerShown: false }} />
-            <Stack.Screen name="Add" component={AddScreen} navigation= {this.props.navigation} />
-            <Stack.Screen name="Save" component={SaveScreen} />
-
+            <Stack.Screen name="Add" component={AddScreen} navigation={this.props.navigation}/>
+            <Stack.Screen name="Save" component={SaveScreen} navigation={this.props.navigation}/>
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>
