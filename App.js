@@ -21,7 +21,6 @@ const firebaseConfig = {
   appId: "1:982826221843:web:768e3edd94030c2e60dae6",
   measurementId: "G-VC13TPTX83",
 };
-
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig);
 }
@@ -35,6 +34,7 @@ import LoginScreen from "./components/auth/Login";
 import MainScreen from "./components/Main";
 import AddScreen from "./components/main/Add";
 import SaveScreen from "./components/main/Save";
+import CommentScreen from "./components/main/Comment";
 
 const Stack = createStackNavigator();
 
@@ -100,6 +100,11 @@ export class App extends Component {
             <Stack.Screen
               name="Save"
               component={SaveScreen}
+              navigation={this.props.navigation}
+            />
+            <Stack.Screen
+              name="Comment"
+              component={CommentScreen}
               navigation={this.props.navigation}
             />
           </Stack.Navigator>
