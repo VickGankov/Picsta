@@ -77,7 +77,11 @@ function Profile(props) {
   };
 
   if (user === null) {
-    return <View />;
+    return (
+      <View>
+        <Button title="Logout" onPress={() => onLogout()} />
+      </View>
+    );
   }
   return (
     <View style={styles.container}>
